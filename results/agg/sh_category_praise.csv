@@ -1,0 +1,251 @@
+category,count,percentage
+Delivery_Praise,4869,0.46
+Product Quality_Praise,1533,0.14
+Product_Praise,1181,0.11
+Service_Praise,324,0.03
+Product Satisfaction_Praise,310,0.03
+Quality_Praise,291,0.03
+Customer Service_Praise,278,0.03
+Praise,134,0.01
+Product Recommendation_Praise,95,0.01
+Satisfaction_Praise,94,0.01
+Product Performance_Praise,87,0.01
+Store_Praise,82,0.01
+Performance_Praise,79,0.01
+Recommendation_Praise,72,0.01
+Overall Satisfaction_Praise,52,0.0
+Packaging_Praise,51,0.0
+Shopping Experience_Praise,49,0.0
+Seller_Praise,45,0.0
+Value_Praise,44,0.0
+Store Recommendation_Praise,39,0.0
+Delivery_Praise_Product Quality_Praise,39,0.0
+Product_Praise_Delivery_Praise,37,0.0
+Customer Loyalty_Praise,36,0.0
+Product Condition_Praise,36,0.0
+Product Quality_Praise_Delivery_Praise,34,0.0
+Purchase Experience_Praise,31,0.0
+Product Accuracy_Praise,30,0.0
+Purchase_Praise,30,0.0
+Product Delivery_Praise,24,0.0
+Overall Experience_Praise,24,0.0
+Customer Satisfaction_Praise,23,0.0
+Product Match_Praise,21,0.0
+Customer Experience_Praise,20,0.0
+Trust_Praise,18,0.0
+Delivery_Praise_Product_Praise,18,0.0
+Purchase Satisfaction_Praise,15,0.0
+Product Value_Praise,13,0.0
+Price_Praise,12,0.0
+Product Appearance_Praise,11,0.0
+Service Quality_Praise,11,0.0
+Cost-Benefit_Praise,11,0.0
+Value for Money_Praise,10,0.0
+Product Fit_Praise,10,0.0
+Store Experience_Praise,9,0.0
+Product Expectation_Praise,8,0.0
+Efficiency_Praise,8,0.0
+Purchase Process_Praise,8,0.0
+Overall_Praise,8,0.0
+Store Reputation_Praise,8,0.0
+Trustworthiness_Praise,8,0.0
+Product Description_Praise,8,0.0
+Product Design_Praise,7,0.0
+Website_Praise,7,0.0
+Product_Quality_Praise,7,0.0
+Loyalty_Praise,7,0.0
+Reliability_Praise,7,0.0
+Shipping_Praise,7,0.0
+Store Quality_Praise,7,0.0
+Store Reliability_Praise,7,0.0
+Supplier_Praise,7,0.0
+Purchase_Satisfaction_Praise,6,0.0
+Pricing_Praise,6,0.0
+Company_Praise,6,0.0
+Transaction_Praise,6,0.0
+Order Fulfillment_Praise,6,0.0
+Product Effectiveness_Praise,5,0.0
+Store Rating_Praise,5,0.0
+Product Functionality_Praise,5,0.0
+Expectation Met_Praise,5,0.0
+Material_Praise,4,0.0
+Product_Match_Praise,4,0.0
+Condition_Praise,4,0.0
+Product Feature_Praise,4,0.0
+Brand Loyalty_Praise,4,0.0
+Seller Recommendation_Praise,4,0.0
+Seller Service_Praise,4,0.0
+Usability_Praise,4,0.0
+General_Praise,3,0.0
+Expectation_Met_Praise,3,0.0
+Product Comfort_Praise,3,0.0
+Product Authenticity_Praise,3,0.0
+Company Reputation_Praise,3,0.0
+Product Aesthetics_Praise,3,0.0
+Product Aesthetic_Praise,3,0.0
+Customer Trust_Praise,3,0.0
+Product and Service_Praise,3,0.0
+Product Utility_Praise,3,0.0
+Service Efficiency_Praise,3,0.0
+Agreement_Praise,3,0.0
+Delivery_Praise_Quality_Praise,3,0.0
+Order Process_Praise,3,0.0
+Product Usability_Praise,2,0.0
+Delivery_Praise_Product Satisfaction_Praise,2,0.0
+Product Use_Praise,2,0.0
+Service_Praise_Delivery_Praise,2,0.0
+Customer Service_Praise_Delivery_Praise,2,0.0
+Product and Delivery_Praise,2,0.0
+Site_Praise,2,0.0
+Ease of Use_Praise,2,0.0
+Seller Performance_Praise,2,0.0
+Store Efficiency_Praise,2,0.0
+Shopping_Praise,2,0.0
+Product Features_Praise,2,0.0
+Product Variation_Praise,2,0.0
+Early Delivery_Praise,2,0.0
+Company Reliability_Praise,2,0.0
+Product Efficiency_Praise,2,0.0
+Material Quality_Praise,2,0.0
+Overall_Satisfaction_Praise,2,0.0
+Product_Praise_Service_Praise,2,0.0
+Gift_Praise,2,0.0
+Agreement Fulfillment_Praise,2,0.0
+Communication_Praise,2,0.0
+Website Experience_Praise,2,0.0
+Punctuality_Praise,2,0.0
+Delivery Speed_Praise,2,0.0
+Functionality_Praise,2,0.0
+Order Experience_Praise,2,0.0
+Order Confirmation_Praise,2,0.0
+Order Accuracy_Praise,2,0.0
+Purchase_Process_Praise,2,0.0
+Fit_Praise,2,0.0
+Store_Reliability_Praise,2,0.0
+Delivery_Early_Praise,2,0.0
+Comfort_Praise,2,0.0
+Product Specification_Praise,2,0.0
+Usage_Praise,2,0.0
+Seller Trust_Praise,1,0.0
+Customer_Service_Praise,1,0.0
+Seller Efficiency_Praise,1,0.0
+Purchasing Process_Praise,1,0.0
+Seller Reputation_Praise,1,0.0
+Delivery Service_Praise,1,0.0
+Quality_Praise_Customer Service_Praise,1,0.0
+Quality_Praise_Delivery_Praise,1,0.0
+Delivery Reliability_Praise,1,0.0
+Delivery Delay_Praise,1,0.0
+Repeat Customer_Praise,1,0.0
+Seller Information_Praise,1,0.0
+Seller Experience_Praise,1,0.0
+Delivery Commitment_Praise,1,0.0
+Security_Praise,1,0.0
+Store Credibility_Praise,1,0.0
+Service Speed_Praise,1,0.0
+Store Trust_Praise,1,0.0
+Website Usability_Praise,1,0.0
+Website Service_Praise,1,0.0
+Website Security_Praise,1,0.0
+Website Quality_Praise,1,0.0
+User Experience_Praise,1,0.0
+App_Praise,1,0.0
+Assembly_Praise,1,0.0
+Transparency_Praise,1,0.0
+Support_Praise,1,0.0
+Buying Process_Praise,1,0.0
+Supplier Recommendation_Praise,1,0.0
+Successful Purchase_Praise,1,0.0
+Store_Recommendation_Praise,1,0.0
+Store and Product_Praise,1,0.0
+Store Satisfaction_Praise,1,0.0
+Service and Product_Praise,1,0.0
+Company Quality_Praise,1,0.0
+Store Performance_Praise,1,0.0
+Store Loyalty_Praise,1,0.0
+Customer Appreciation_Praise,1,0.0
+Purchase Security_Praise,1,0.0
+Space_Praise,1,0.0
+Space_Idea_Praise,1,0.0
+Size_Praise,1,0.0
+Site Safety_Praise,1,0.0
+Site Recommendation_Praise,1,0.0
+Site Efficiency_Praise,1,0.0
+Customer Recommendation_Praise,1,0.0
+Service_Satisfaction_Praise,1,0.0
+Customer Support_Praise,1,0.0
+Delivery Timing_Praise,1,0.0
+Product_Expectation_Praise,1,0.0
+Delivery and Product_Praise,1,0.0
+Product Fulfillment_Praise,1,0.0
+Process_Praise,1,0.0
+First Purchase Satisfaction_Praise,1,0.0
+Fabric Quality_Issue_Delivery_Praise,1,0.0
+Product Application_Praise,1,0.0
+Product Compatibility_Praise,1,0.0
+Experience_Praise,1,0.0
+Product Condition_Praise_Delivery_Praise,1,0.0
+Product Correspondence_Praise,1,0.0
+Product Defect_Issue_Delivery_Praise,1,0.0
+Expectation_Meet_Praise,1,0.0
+Exchange_Praise,1,0.0
+Product Exceeds Expectations_Praise,1,0.0
+Product Exchange_Praise,1,0.0
+Product Expectations_Praise,1,0.0
+Product Experience_Praise,1,0.0
+Price_Praise_Delivery_Praise,1,0.0
+Fulfillment_Praise,1,0.0
+Price and Quality_Praise,1,0.0
+Installation_Praise,1,0.0
+Navigation_Praise,1,0.0
+Negotiation_Praise,1,0.0
+Instructions_Praise,1,0.0
+Order Timeliness_Praise,1,0.0
+Order Tracking_Praise,1,0.0
+Order_Praise,1,0.0
+Information_Praise,1,0.0
+Price and Logistics_Praise,1,0.0
+Overall Service_Praise,1,0.0
+Packaging_Praise_Delivery_Praise,1,0.0
+General Recommendation_Praise,1,0.0
+Performance_Praise_Delivery_Praise,1,0.0
+Platform_Praise,1,0.0
+Price and Delivery_Praise,1,0.0
+Product Finish_Praise,1,0.0
+After-Sales Service_Praise,1,0.0
+Purchase Intention_Praise,1,0.0
+Product Guarantee_Praise,1,0.0
+Product and Store Satisfaction_Praise,1,0.0
+Product_Aesthetics_Praise,1,0.0
+Product_Condition_Praise,1,0.0
+Product_Delivery_Praise,1,0.0
+Product_Design_Praise,1,0.0
+Product_Issue_Delivery_Praise,1,0.0
+Product_Performance_Praise,1,0.0
+Delivery_Praise_Customer Service_Praise,1,0.0
+Delivery_Issue_Product_Praise,1,0.0
+Product_Praise_Store_Praise,1,0.0
+Product_Purchase_Praise,1,0.0
+Delivery_Issue_Product Quality_Praise,1,0.0
+Product_Satisfaction_Praise,1,0.0
+Product_Suitability_Praise,1,0.0
+Delivery_Issue_Product Arrival_Praise,1,0.0
+Product Versatility_Praise,1,0.0
+Product Variety_Praise,1,0.0
+Delivery_Praise_Product Accuracy_Praise,1,0.0
+Product Purchase_Praise,1,0.0
+Design_Praise,1,0.0
+Product Material_Praise,1,0.0
+Product Packaging_Praise,1,0.0
+Delivery_Praise_Shopping Experience_Praise,1,0.0
+Product Preference_Praise,1,0.0
+Product Presentation_Praise,1,0.0
+Delivery_Praise_Product Specification_Praise,1,0.0
+Product Usefulness_Praise,1,0.0
+Product Quality_Praise_Packaging_Praise,1,0.0
+Product Quality_Praise_Packaging_Praise_Delivery_Praise,1,0.0
+Product Reliability_Praise,1,0.0
+Delivery_Praise_Product Condition_Praise,1,0.0
+Product Size_Praise,1,0.0
+Product Usage_Praise,1,0.0
+Aesthetic_Praise,1,0.0

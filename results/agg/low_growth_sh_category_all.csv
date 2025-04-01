@@ -1,0 +1,447 @@
+category,count,percentage
+Delivery_Praise,1743,0.21
+Delivery_Issue,1473,0.18
+Unclassifiable,765,0.09
+Product Quality_Praise,596,0.07
+Product_Praise,461,0.06
+Product Mismatch_Issue,408,0.05
+Product Quality_Issue,261,0.03
+Service_Praise,118,0.01
+Quality_Praise,115,0.01
+Product Satisfaction_Praise,106,0.01
+Customer Service_Issue,103,0.01
+Customer Service_Praise,102,0.01
+Order_Issue,74,0.01
+Packaging_Issue,64,0.01
+Product_Issue,57,0.01
+Product Defect_Issue,55,0.01
+Praise,46,0.01
+Quality_Issue,46,0.01
+Product Size_Issue,42,0.01
+Order Fulfillment_Issue,41,0.01
+Product Authenticity_Issue,38,0.0
+Product Damage_Issue,38,0.0
+Satisfaction_Praise,34,0.0
+Performance_Praise,34,0.0
+Recommendation_Praise,33,0.0
+Product Condition_Issue,31,0.0
+Product Recommendation_Praise,31,0.0
+Product Performance_Praise,29,0.0
+Store_Praise,25,0.0
+Shopping Experience_Praise,23,0.0
+Order Incomplete_Issue,21,0.0
+Refund_Issue,19,0.0
+Product Performance_Issue,19,0.0
+Value_Praise,18,0.0
+Shipping Cost_Issue,18,0.0
+Product Missing_Issue,17,0.0
+Invoice_Issue,17,0.0
+Overall Satisfaction_Praise,17,0.0
+Product Condition_Praise,16,0.0
+Shipping_Issue,16,0.0
+Seller_Praise,15,0.0
+Product Expectation_Issue,15,0.0
+Product Quality_Praise_Delivery_Praise,14,0.0
+Order Cancellation_Issue,14,0.0
+Store Recommendation_Praise,13,0.0
+Return_Issue,13,0.0
+Delivery_Praise_Product Quality_Praise,13,0.0
+Customer Satisfaction_Praise,13,0.0
+Product Malfunction_Issue,13,0.0
+Product_Praise_Delivery_Praise,12,0.0
+Service_Issue,12,0.0
+Product Delivery_Praise,11,0.0
+Product Compatibility_Issue,11,0.0
+Customer Loyalty_Praise,11,0.0
+Product Description_Issue,11,0.0
+Cancellation_Issue,10,0.0
+Delivery_Delay_Issue,10,0.0
+Product Accuracy_Praise,10,0.0
+Packaging_Praise,10,0.0
+Material_Issue,9,0.0
+Delivery_Time_Issue,9,0.0
+Product Color_Issue,9,0.0
+Purchase Experience_Praise,9,0.0
+Overall Experience_Praise,9,0.0
+Product Specification_Issue,9,0.0
+Delivery_Others,8,0.0
+Purchase_Praise,8,0.0
+Trust_Praise,8,0.0
+Product Incomplete_Issue,8,0.0
+Product Functionality_Issue,7,0.0
+Communication_Issue,7,0.0
+Product Information_Issue,7,0.0
+Product_Quality_Issue,7,0.0
+Product Design_Issue,7,0.0
+Product Appearance_Praise,7,0.0
+Product Match_Praise,6,0.0
+Order Mismatch_Issue,6,0.0
+Stock_Issue,6,0.0
+Shipping Fee_Issue,6,0.0
+Product_Mismatch_Issue,6,0.0
+Customer Experience_Praise,6,0.0
+Payment_Issue,5,0.0
+Functionality_Issue,5,0.0
+Product Expectation_Praise,5,0.0
+Price_Praise,5,0.0
+Purchase Satisfaction_Praise,5,0.0
+Store Reliability_Praise,5,0.0
+Order Processing_Issue,5,0.0
+Order Error_Issue,5,0.0
+Size_Issue,5,0.0
+Product Quality_Others,5,0.0
+Product Value_Praise,5,0.0
+Store_Issue,5,0.0
+Product Counterfeit_Issue,5,0.0
+Performance_Issue,4,0.0
+Pricing_Issue,4,0.0
+Cost-Benefit_Praise,4,0.0
+Order Inaccuracy_Issue,4,0.0
+Product Availability_Issue,4,0.0
+Value for Money_Praise,4,0.0
+Loyalty_Praise,4,0.0
+Product Completeness_Issue,4,0.0
+Product Description_Others,4,0.0
+Shipping_Praise,4,0.0
+Delivery_Praise_Product_Praise,4,0.0
+Store Experience_Praise,4,0.0
+Product Fit_Praise,3,0.0
+Agreement_Praise,3,0.0
+Missing Item_Issue,3,0.0
+Availability_Issue,3,0.0
+Product Packaging_Issue,3,0.0
+Product_Condition_Issue,3,0.0
+Product Function_Issue,3,0.0
+Purchase_Issue,3,0.0
+Product Fragility_Issue,3,0.0
+Product Comfort_Praise,3,0.0
+Others,3,0.0
+Product Comfort_Issue,3,0.0
+Product Expiration_Issue,3,0.0
+Product_Functionality_Issue,3,0.0
+Product Exchange_Issue,3,0.0
+Product Durability_Issue,3,0.0
+Product Description_Praise,3,0.0
+Company_Praise,3,0.0
+Material Quality_Issue,3,0.0
+Product Color Mismatch_Issue,3,0.0
+Packaging_Others,3,0.0
+Delivery Time_Issue,3,0.0
+Reliability_Praise,3,0.0
+Delivery Delay_Issue,3,0.0
+Delivery_Issue_Customer Service_Issue,3,0.0
+Efficiency_Praise,3,0.0
+Exchange_Issue,3,0.0
+Store Quality_Praise,3,0.0
+Product Feature_Praise,2,0.0
+Delivery_Concern,2,0.0
+Price_Issue,2,0.0
+Product Delivery_Issue,2,0.0
+Color_Issue,2,0.0
+Postal Service_Issue,2,0.0
+Color Mismatch_Issue,2,0.0
+Delivery_Timing_Issue,2,0.0
+Seller Recommendation_Praise,2,0.0
+Product Misrepresentation_Issue,2,0.0
+Product_Quality_Praise,2,0.0
+Product Incompleteness_Issue,2,0.0
+Battery_Issue,2,0.0
+Product Design_Others,2,0.0
+Product Presentation_Issue,2,0.0
+Product Condition_Others,2,0.0
+Seller Service_Praise,2,0.0
+Pricing_Praise,2,0.0
+Counterfeit_Issue,2,0.0
+Product Authenticity_Praise,2,0.0
+Product_Authenticity_Issue,2,0.0
+Missing Accessories_Issue,2,0.0
+Logistics_Issue,2,0.0
+Usability_Praise,2,0.0
+Comfort_Issue,2,0.0
+Expectation Met_Praise,2,0.0
+Product Manual_Issue,2,0.0
+Brand Loyalty_Praise,2,0.0
+Delivery_Issue_Issue,2,0.0
+Product Assembly_Issue,2,0.0
+Store Rating_Praise,2,0.0
+Product Aesthetics_Praise,2,0.0
+Trustworthiness_Praise,2,0.0
+Service Quality_Praise,2,0.0
+General_Praise,2,0.0
+Product Design_Praise,2,0.0
+Overall_Praise,2,0.0
+Product Recognition_Issue,2,0.0
+Order Cancellation_Others,2,0.0
+Delivery_Praise_Quality_Issue,2,0.0
+Product Size_Others,2,0.0
+Product Features_Praise,2,0.0
+Delivery_Praise_Quality_Praise,2,0.0
+Order Fulfillment_Praise,2,0.0
+Website_Praise,2,0.0
+Warranty_Issue,2,0.0
+Product Utility_Praise,2,0.0
+Assembly_Issue,2,0.0
+Product Recommendation_Others,2,0.0
+Supplier_Praise,2,0.0
+Product Fit_Issue,2,0.0
+Product_Issue_Issue,2,0.0
+Purchase_Satisfaction_Praise,2,0.0
+Instructions_Issue,2,0.0
+Purchase Process_Praise,2,0.0
+Customer Commitment_Others,2,0.0
+Delivery_Mismatch_Issue,2,0.0
+Delivery_Incomplete_Issue,2,0.0
+Punctuality_Praise,2,0.0
+Support_Issue,2,0.0
+Delivery_Early_Praise,2,0.0
+Return_Others,2,0.0
+Product Value_Others,2,0.0
+Order Quantity_Issue,2,0.0
+Store Experience_Others,1,0.0
+Product_Description_Issue,1,0.0
+Site Recommendation_Praise,1,0.0
+Shipping_Cost_Issue,1,0.0
+Shopping_Praise,1,0.0
+Product_Delivery_Praise,1,0.0
+Product_Damage_Issue,1,0.0
+Store Efficiency_Praise,1,0.0
+Product_Dislike_Issue,1,0.0
+Site_Praise,1,0.0
+Refund Inquiry_Others,1,0.0
+Product_Completion_Issue,1,0.0
+Product_Appearance_Issue,1,0.0
+Product Tampering_Issue,1,0.0
+Product Understanding_Others,1,0.0
+Size_Mismatch_Issue,1,0.0
+Product Usability_Praise,1,0.0
+Product Usage_Others,1,0.0
+Product Use_Praise,1,0.0
+Product Value_Issue,1,0.0
+Website_Issue,1,0.0
+Website Service_Praise,1,0.0
+Size_Praise,1,0.0
+Product Variation_Issue,1,0.0
+Product Variation_Praise,1,0.0
+Product Variety_Praise,1,0.0
+Product Versatility_Praise,1,0.0
+Product Voltage_Issue,1,0.0
+Website Security_Praise,1,0.0
+Store Trust_Praise,1,0.0
+Website Quality_Praise,1,0.0
+Product Wrong Delivery_Issue,1,0.0
+Product_Durability_Issue,1,0.0
+Product and Service_Praise,1,0.0
+Website Experience_Praise,1,0.0
+Product_Aesthetics_Issue,1,0.0
+Product and Delivery_Praise,1,0.0
+Product_Match_Praise,1,0.0
+Product_Expectation_Issue,1,0.0
+Product_Recommendation,1,0.0
+Product_Taste_Issue,1,0.0
+Product_Usefulness_Issue,1,0.0
+Promotion_Issue,1,0.0
+Security_Praise,1,0.0
+Promotion_Suggestion,1,0.0
+System_Issue,1,0.0
+Sales Communication_Issue,1,0.0
+Punctuality_Issue,1,0.0
+Safety_Issue,1,0.0
+Return_Process_Issue,1,0.0
+Purchase_Failure_Issue,1,0.0
+Store Reputation_Praise,1,0.0
+Purchase_Process_Praise,1,0.0
+Quality Control_Issue,1,0.0
+Quality_Others,1,0.0
+Return Process_Issue,1,0.0
+Product Swap_Issue,1,0.0
+Quality_Praise_Delivery_Praise,1,0.0
+Supplier_Issue,1,0.0
+Return Inquiry_Others,1,0.0
+Supplier Management_Issue,1,0.0
+Store Satisfaction_Praise,1,0.0
+Recommendation_Issue,1,0.0
+Recommendation_Others,1,0.0
+Store_Reliability_Praise,1,0.0
+Product_Satisfaction_Praise,1,0.0
+Transaction_Praise,1,0.0
+Product_Expiration_Issue,1,0.0
+Seller Reputation_Praise,1,0.0
+Product_Failure_Issue,1,0.0
+Product_Fake_Issue,1,0.0
+Shipping Process_Issue,1,0.0
+Shipping Policy_Issue,1,0.0
+Shipping Misleading_Issue,1,0.0
+Product_Initial Impression,1,0.0
+Volume_Issue,1,0.0
+Shipping Delay_Issue,1,0.0
+Store Preference_Others,1,0.0
+Store_Recommendation_Praise,1,0.0
+Value_Issue,1,0.0
+Refund_Request,1,0.0
+Shipping Charge_Issue,1,0.0
+Shelf Life_Issue,1,0.0
+Service_Satisfaction_Praise,1,0.0
+Usage_Praise,1,0.0
+Service_Recommendation,1,0.0
+Responsibility_Others,1,0.0
+Product_Others,1,0.0
+Usability_Issue,1,0.0
+Store Recommendation_Issue,1,0.0
+Product_Praise_Service_Praise,1,0.0
+Seller_Issue,1,0.0
+Trust_Issue,1,0.0
+Product_Purchase_Praise,1,0.0
+Account Access_Issue,1,0.0
+Product Dissatisfaction_Issue,1,0.0
+Product Space_Issue,1,0.0
+Delivery_Issue_Product_Praise,1,0.0
+Delivery_Request,1,0.0
+Delivery_Praise_Trust_Issue,1,0.0
+Delivery_Praise_Shopping Experience_Praise,1,0.0
+Delivery_Praise_Product Quality_Issue,1,0.0
+Delivery_Logistics_Issue,1,0.0
+Delivery_Issue_Refund_Issue,1,0.0
+Delivery_Issue_Quality_Issue,1,0.0
+Delivery_Issue_Product Quality_Issue,1,0.0
+Product Size_Praise,1,0.0
+Delivery_Issue_Product Damage_Issue,1,0.0
+Delivery_Inquiry,1,0.0
+Delivery Status_Issue,1,0.0
+Delivery Speed_Issue,1,0.0
+Delivery Service_Praise,1,0.0
+Delivery Service_Issue,1,0.0
+Delivery Reliability_Praise,1,0.0
+Delivery_Slow_Issue,1,0.0
+Delivery_Suggestion,1,0.0
+Design_Praise,1,0.0
+Documentation_Issue,1,0.0
+Information_Issue,1,0.0
+Incomplete_Order_Issue,1,0.0
+Incomplete Order_Issue,1,0.0
+Fulfillment_Praise,1,0.0
+Flavor_Issue,1,0.0
+First Purchase Satisfaction_Praise,1,0.0
+Fake Product_Issue,1,0.0
+Fabric Quality_Issue_Delivery_Praise,1,0.0
+Expectation_Met_Praise,1,0.0
+Expectation_Meet_Praise,1,0.0
+Expectation_Issue,1,0.0
+Exchange_Request,1,0.0
+Evaluation_Others,1,0.0
+Early Delivery_Praise,1,0.0
+Durability_Issue,1,0.0
+Delivery Policy_Issue,1,0.0
+Delivery Location_Issue,1,0.0
+Delivery Fee_Issue,1,0.0
+Compatibility_Issue,1,0.0
+Company Reliability_Praise,1,0.0
+Company Quality_Praise,1,0.0
+Company Credibility_Issue,1,0.0
+Communication_Praise,1,0.0
+Commitment_Issue,1,0.0
+Comfort_Praise,1,0.0
+Color Mismatch_Issue_Refund Delay_Issue,1,0.0
+Cartridge_Issue,1,0.0
+Cancellation_Request,1,0.0
+Buying Process_Praise,1,0.0
+Brand Awareness_Others,1,0.0
+Billing_Issue,1,0.0
+Authenticity_Issue,1,0.0
+Audio Quality_Issue,1,0.0
+App_Praise,1,0.0
+Company Reputation_Praise,1,0.0
+Condition_Issue,1,0.0
+Delivery Cost_Issue,1,0.0
+Condition_Praise,1,0.0
+Delivery Commitment_Praise,1,0.0
+Defect_Issue,1,0.0
+Deceptive Advertising_Issue,1,0.0
+Data Loss_Issue,1,0.0
+Customer_Service_Praise,1,0.0
+Customer Trust_Praise,1,0.0
+Customer Support_Praise,1,0.0
+Customer Service_Praise_Delivery_Praise,1,0.0
+Customer Service_Others,1,0.0
+Customer Service_Concern,1,0.0
+Customer Respect_Issue,1,0.0
+Customer Recommendation_Praise,1,0.0
+Customer Loyalty_Issue,1,0.0
+Customer Communication_Issue,1,0.0
+Credibility_Issue,1,0.0
+Information_Praise,1,0.0
+Inquiry_Others,1,0.0
+Installation_Others,1,0.0
+Product Instructions_Issue,1,0.0
+Product Installation_Issue,1,0.0
+Product Inquiry_Others,1,0.0
+Product Information_Others,1,0.0
+Product Feedback_Others,1,0.0
+Product Features_Issue,1,0.0
+Product Feature_Others,1,0.0
+Product Feature_Issue,1,0.0
+Product Expiry_Issue,1,0.0
+Product Expectations_Praise,1,0.0
+Product Expectation_Others,1,0.0
+Product Exchange_Praise,1,0.0
+Product Durability_Concern,1,0.0
+Aesthetic_Praise,1,0.0
+Product Dislike_Issue,1,0.0
+Product Defect_Issue_Delivery_Praise,1,0.0
+Product Instruction_Issue,1,0.0
+Product Knowledge_Issue,1,0.0
+Product Authenticity_Others,1,0.0
+Product Length_Issue,1,0.0
+Product Setup_Issue,1,0.0
+Product Safety_Issue,1,0.0
+Product Resistance_Issue,1,0.0
+Product Replica_Issue,1,0.0
+Product Recommendation_Issue,1,0.0
+Product Quantity_Issue,1,0.0
+Product Quality_Praise_Delivery_Issue,1,0.0
+Product Quality_Concern,1,0.0
+Product Purchase_Praise,1,0.0
+Product Protection_Issue,1,0.0
+Product Preference_Others,1,0.0
+Product Performance_Others,1,0.0
+Product Missing Part_Issue,1,0.0
+Product Missing Items_Issue,1,0.0
+Product Mismatch_Others,1,0.0
+Product Compatibility_Praise,1,0.0
+Product Aesthetic_Praise,1,0.0
+Instructions_Others,1,0.0
+Order Status_Issue,1,0.0
+Order Process_Issue,1,0.0
+Order Non-Delivery_Issue,1,0.0
+Order Mix-Up_Issue,1,0.0
+Order Missing_Issue,1,0.0
+Order Management_Issue,1,0.0
+Order Incompleteness_Issue,1,0.0
+Order Discrepancy_Issue,1,0.0
+Order Delay_Issue,1,0.0
+Order Accuracy_Praise,1,0.0
+Missing Parts_Issue,1,0.0
+Missing Documentation_Issue,1,0.0
+Material Quality_Praise,1,0.0
+Manual Language_Issue,1,0.0
+Issue Resolution_Others,1,0.0
+Inventory_Issue,1,0.0
+Order Process_Praise,1,0.0
+Order Timeliness_Praise,1,0.0
+Product Accuracy_Issue,1,0.0
+Order Tracking_Issue,1,0.0
+Pricing_Others,1,0.0
+Power_Issue,1,0.0
+Platform_Praise,1,0.0
+Payment Processing_Others,1,0.0
+Partnership_Issue,1,0.0
+Partner Company_Issue,1,0.0
+Partial Delivery_Issue,1,0.0
+Packaging_Suggestion,1,0.0
+Packaging_Praise_Delivery_Praise,1,0.0
+Overall Service_Praise,1,0.0
+Ordering_Issue,1,0.0
+Order_Issue_Issue,1,0.0
+Order_Incomplete_Issue,1,0.0
+Order_Fulfillment_Issue,1,0.0
+Order Update_Issue,1,0.0
+Weight_Issue,1,0.0

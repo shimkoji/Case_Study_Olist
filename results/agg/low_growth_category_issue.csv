@@ -1,0 +1,324 @@
+category,count,percentage
+Delivery_Issue,2397,0.42
+Product Mismatch_Issue,679,0.12
+Product Quality_Issue,450,0.08
+Customer Service_Issue,180,0.03
+Product Defect_Issue,111,0.02
+Packaging_Issue,110,0.02
+Order_Issue,108,0.02
+Product_Issue,106,0.02
+Quality_Issue,89,0.02
+Order Fulfillment_Issue,75,0.01
+Product Size_Issue,69,0.01
+Product Damage_Issue,67,0.01
+Product Condition_Issue,60,0.01
+Product Authenticity_Issue,52,0.01
+Shipping Cost_Issue,48,0.01
+Order Incomplete_Issue,43,0.01
+Invoice_Issue,38,0.01
+Product Missing_Issue,36,0.01
+Refund_Issue,35,0.01
+Product Performance_Issue,34,0.01
+Order Cancellation_Issue,32,0.01
+Shipping_Issue,29,0.01
+Product Expectation_Issue,28,0.0
+Service_Issue,27,0.0
+Product Malfunction_Issue,26,0.0
+Product Compatibility_Issue,21,0.0
+Product Description_Issue,21,0.0
+Material_Issue,18,0.0
+Return_Issue,18,0.0
+Communication_Issue,16,0.0
+Product Color_Issue,16,0.0
+Cancellation_Issue,16,0.0
+Performance_Issue,16,0.0
+Product Incomplete_Issue,15,0.0
+Product Design_Issue,14,0.0
+Product Information_Issue,14,0.0
+Product_Quality_Issue,13,0.0
+Delivery_Time_Issue,13,0.0
+Order Mismatch_Issue,13,0.0
+Stock_Issue,12,0.0
+Product Specification_Issue,12,0.0
+Product Functionality_Issue,12,0.0
+Delivery_Delay_Issue,12,0.0
+Size_Issue,11,0.0
+Product_Mismatch_Issue,11,0.0
+Pricing_Issue,11,0.0
+Product Availability_Issue,9,0.0
+Payment_Issue,8,0.0
+Order Processing_Issue,8,0.0
+Product Exchange_Issue,8,0.0
+Material Quality_Issue,7,0.0
+Functionality_Issue,7,0.0
+Exchange_Issue,7,0.0
+Product Delivery_Issue,6,0.0
+Order Error_Issue,6,0.0
+Delivery Time_Issue,6,0.0
+Shipping_Cost_Issue,6,0.0
+Order Inaccuracy_Issue,6,0.0
+Product Misrepresentation_Issue,6,0.0
+Shipping Fee_Issue,6,0.0
+Product Counterfeit_Issue,5,0.0
+Product Color Mismatch_Issue,5,0.0
+Product Durability_Issue,5,0.0
+Product Comfort_Issue,5,0.0
+Delivery_Issue_Customer Service_Issue,5,0.0
+Store_Issue,5,0.0
+Compatibility_Issue,5,0.0
+Delivery Delay_Issue,4,0.0
+Product_Functionality_Issue,4,0.0
+Color Mismatch_Issue,4,0.0
+Product Fit_Issue,4,0.0
+Product Error_Issue,4,0.0
+Product Function_Issue,4,0.0
+Order Quantity_Issue,4,0.0
+Product Manual_Issue,4,0.0
+Availability_Issue,4,0.0
+Missing Item_Issue,4,0.0
+Product Completeness_Issue,4,0.0
+Counterfeit_Issue,4,0.0
+Tracking_Issue,4,0.0
+Order Incompleteness_Issue,3,0.0
+Product Expiration_Issue,3,0.0
+Comfort_Issue,3,0.0
+Misleading Advertising_Issue,3,0.0
+Purchase_Issue,3,0.0
+Store Recommendation_Issue,3,0.0
+Missing Parts_Issue,3,0.0
+Delivery Information_Issue,3,0.0
+Color_Issue,3,0.0
+Product_Condition_Issue,3,0.0
+Price_Issue,3,0.0
+Logistics_Issue,3,0.0
+Order_Incomplete_Issue,3,0.0
+Postal Service_Issue,3,0.0
+Battery_Issue,3,0.0
+Product Quantity_Issue,3,0.0
+Order_Issue_Issue,3,0.0
+Website_Issue,3,0.0
+Product Packaging_Issue,3,0.0
+Advertising_Issue,3,0.0
+Documentation_Issue,3,0.0
+Product Feature_Issue,3,0.0
+Product Satisfaction_Issue,3,0.0
+Product_Damage_Issue,3,0.0
+Product Fragility_Issue,3,0.0
+Order Missing_Issue,3,0.0
+Instructions_Issue,3,0.0
+Product_Issue_Issue,3,0.0
+Product_Durability_Issue,2,0.0
+Delivery_Praise_Product Size_Issue,2,0.0
+Defective Product_Issue,2,0.0
+Order_Status_Issue,2,0.0
+Supplier_Issue,2,0.0
+Product Accuracy_Issue,2,0.0
+Delivery_Praise_Product Quality_Issue,2,0.0
+Product Assembly_Issue,2,0.0
+Brand_Issue,2,0.0
+Product Presentation_Issue,2,0.0
+Product Missing Part_Issue,2,0.0
+Assembly_Issue,2,0.0
+Warranty_Issue,2,0.0
+Authenticity_Issue,2,0.0
+Billing_Issue,2,0.0
+Product Incompleteness_Issue,2,0.0
+Product Trust_Issue,2,0.0
+Support_Issue,2,0.0
+Product Value_Issue,2,0.0
+Product Finish_Issue,2,0.0
+Product Expiry_Issue,2,0.0
+Product Dissatisfaction_Issue,2,0.0
+Trust_Issue,2,0.0
+Product_Authenticity_Issue,2,0.0
+Customer Loyalty_Issue,2,0.0
+Product Dislike_Issue,2,0.0
+Product Recognition_Issue,2,0.0
+Manual_Issue,2,0.0
+Delivery_Timing_Issue,2,0.0
+Incomplete Order_Issue,2,0.0
+Safety_Issue,2,0.0
+Delivery_Issue_Quality_Issue,2,0.0
+Information_Issue,2,0.0
+Delivery_Issue_Issue,2,0.0
+Missing Accessories_Issue,2,0.0
+Durability_Issue,2,0.0
+Delivery_Mismatch_Issue,2,0.0
+Product_Quantity_Issue,2,0.0
+Delivery Speed_Issue,2,0.0
+Delivery_Incomplete_Issue,2,0.0
+Delivery_Slow_Issue,2,0.0
+Delivery_Praise_Quality_Issue,2,0.0
+Order Management_Issue,2,0.0
+Order Mix-Up_Issue,2,0.0
+Recommendation_Issue,2,0.0
+Instruction_Issue,2,0.0
+Order Non-Delivery_Issue,2,0.0
+Product_Fit_Issue,2,0.0
+Manual Language_Issue,2,0.0
+Shipping Process_Issue,1,0.0
+Product Usability_Issue,1,0.0
+Remote Control_Issue,1,0.0
+Volume_Issue,1,0.0
+Reshipment_Issue,1,0.0
+Return Process_Issue,1,0.0
+Product Tampering_Issue,1,0.0
+Shipping Policy_Issue,1,0.0
+Seller_Issue,1,0.0
+Product Swap_Issue,1,0.0
+Shipping Delay_Issue,1,0.0
+Product Regulation_Issue,1,0.0
+Weight_Issue,1,0.0
+Product Replacement_Issue,1,0.0
+Shipping Charge_Issue,1,0.0
+Shelf Life_Issue,1,0.0
+Product Replica_Issue,1,0.0
+Product Resistance_Issue,1,0.0
+Return_Process_Issue,1,0.0
+Product Safety_Issue,1,0.0
+Shipping Misleading_Issue,1,0.0
+Product Setup_Issue,1,0.0
+Sales Communication_Issue,1,0.0
+Product Size Mismatch_Issue,1,0.0
+Product Space_Issue,1,0.0
+Product Variation_Issue,1,0.0
+Product_Expiration_Issue,1,0.0
+Refund Delay_Issue,1,0.0
+Product_Taste_Issue,1,0.0
+Product Recommendation_Issue,1,0.0
+Product_Color_Issue,1,0.0
+Product_Completion_Issue,1,0.0
+Shipping_Timing_Issue,1,0.0
+Shopping Experience_Issue,1,0.0
+Size_Mismatch_Issue,1,0.0
+Sound Quality_Issue,1,0.0
+Stock Availability_Issue,1,0.0
+Supplier Management_Issue,1,0.0
+Product_Defect_Issue,1,0.0
+Product_Incomplete_Issue,1,0.0
+Product_Dislike_Issue,1,0.0
+Store Organization_Issue,1,0.0
+Product_Expectation_Issue,1,0.0
+Product_Fake_Issue,1,0.0
+System_Issue,1,0.0
+Product_Appearance_Issue,1,0.0
+Voltage_Issue,1,0.0
+Product_Aesthetics_Issue,1,0.0
+Product_Failure_Issue,1,0.0
+Product Variety_Issue,1,0.0
+Product Voltage_Issue,1,0.0
+Quality Control_Issue,1,0.0
+Shipping_Fee_Issue,1,0.0
+Product Weight_Issue,1,0.0
+Value_Issue,1,0.0
+User Manual_Issue,1,0.0
+Purchase_Failure_Issue,1,0.0
+Product Wrong Delivery_Issue,1,0.0
+Usability_Issue,1,0.0
+Punctuality_Issue,1,0.0
+Transport_Issue,1,0.0
+Promotion_Issue,1,0.0
+Product_Usefulness_Issue,1,0.0
+Product_Description_Issue,1,0.0
+Access_Issue,1,0.0
+Product Quality_Praise_Delivery_Issue,1,0.0
+Delivery_Speed_Issue,1,0.0
+Delivery Tracking_Issue,1,0.0
+Delivery Urgency_Issue,1,0.0
+Delivery_Issue_Product Damage_Issue,1,0.0
+Delivery_Issue_Product Quality_Issue,1,0.0
+Delivery_Issue_Refund_Issue,1,0.0
+Delivery_Logistics_Issue,1,0.0
+Delivery_Praise_Product Condition_Issue,1,0.0
+Delivery_Praise_Product Damage_Issue,1,0.0
+Delivery_Praise_Product Features_Issue,1,0.0
+Delivery_Praise_Trust_Issue,1,0.0
+Design_Issue,1,0.0
+Logistics_Praise_Product Quality_Issue,1,0.0
+Expectation_Issue,1,0.0
+Fake Product_Issue,1,0.0
+Fit_Issue,1,0.0
+Flavor_Issue,1,0.0
+Incomplete_Order_Issue,1,0.0
+Installation_Issue,1,0.0
+Instruction Missing_Issue,1,0.0
+Inventory_Issue,1,0.0
+Invoice Mismatch_Issue,1,0.0
+Issue,1,0.0
+Delivery Status_Issue,1,0.0
+Delivery Service_Issue,1,0.0
+Delivery Process_Issue,1,0.0
+Delivery Policy_Issue,1,0.0
+Account Access_Issue,1,0.0
+Activation_Issue,1,0.0
+Audio Quality_Issue,1,0.0
+Cartridge_Issue,1,0.0
+Color Mismatch_Issue_Refund Delay_Issue,1,0.0
+Commitment_Issue,1,0.0
+Company Credibility_Issue,1,0.0
+Condition_Issue,1,0.0
+Configuration_Issue,1,0.0
+Counterfeit Product_Issue,1,0.0
+Credibility_Issue,1,0.0
+Customer Communication_Issue,1,0.0
+Customer Respect_Issue,1,0.0
+Data Loss_Issue,1,0.0
+Deceptive Advertising_Issue,1,0.0
+Defect_Issue,1,0.0
+Delivery Cost_Issue,1,0.0
+Delivery Criteria_Issue,1,0.0
+Delivery Fee_Issue,1,0.0
+Delivery Location_Issue,1,0.0
+Delivery Notification_Issue,1,0.0
+Labeling_Issue,1,0.0
+Material Mismatch_Issue,1,0.0
+Product Protection_Issue,1,0.0
+Product Improvement_Issue,1,0.0
+Product Clarity_Issue,1,0.0
+Product Color_Mismatch_Issue,1,0.0
+Accessories_Issue,1,0.0
+Product Deception_Issue,1,0.0
+Product Development_Issue,1,0.0
+Product Effect_Issue,1,0.0
+Product Effectiveness_Issue,1,0.0
+Product Features_Issue,1,0.0
+Product Flavor_Issue,1,0.0
+Product Flaw_Issue,1,0.0
+Product Installation_Issue,1,0.0
+Measurement_Issue,1,0.0
+Product Instruction_Issue,1,0.0
+Product Instructions_Issue,1,0.0
+Product Knowledge_Issue,1,0.0
+Product Length_Issue,1,0.0
+Product Listing_Issue,1,0.0
+Product Measurement_Issue,1,0.0
+Product Mismatch_Issue_Product Quality_Issue,1,0.0
+Product Missing Items_Issue,1,0.0
+Product Missing Parts_Issue,1,0.0
+Product Not Received_Issue,1,0.0
+Product Capacity_Issue,1,0.0
+Product Battery_Issue,1,0.0
+Power_Issue,1,0.0
+Pickup_Issue,1,0.0
+Missing Component_Issue,1,0.0
+Missing Documentation_Issue,1,0.0
+Missing Part_Issue,1,0.0
+Name Correction_Issue,1,0.0
+Order Accuracy_Issue,1,0.0
+Order Completeness_Issue,1,0.0
+Order Delay_Issue,1,0.0
+Order Delivery_Issue,1,0.0
+Order Discrepancy_Issue,1,0.0
+Order Information_Issue,1,0.0
+Order Process_Issue,1,0.0
+Order Status_Issue,1,0.0
+Order Tracking_Issue,1,0.0
+Order Update_Issue,1,0.0
+Order_Fulfillment_Issue,1,0.0
+Order_Issue_Customer Service_Issue,1,0.0
+Ordering_Issue,1,0.0
+Packaging_Issue_Delivery_Issue,1,0.0
+Partial Delivery_Issue,1,0.0
+Partner Company_Issue,1,0.0
+Partnership_Issue,1,0.0
+Wrong Product_Issue,1,0.0

@@ -232,8 +232,23 @@ def _crete_span_cols(df: pd.DataFrame) -> pd.DataFrame:
         "order_delivered_carrier_date",
         "order_delivered_customer_date",
         "order_estimated_delivery_date",
+        "shipping_limit_date",
     ]:
         df_copy[col] = pd.to_datetime(df_copy[col])
+    df_copy["order_approved_span_hours_from_purchase"] = pd.to_numeric(
+        (
+            df_copy["order_approved_at"] - df_copy["order_purchase_timestamp"]
+        ).dt.total_seconds()
+        / 3600,
+        errors="coerce",
+    )
+    df_copy["order_shipping_limit_span_hours_from_purchase"] = pd.to_numeric(
+        (
+            df_copy["shipping_limit_date"] - df_copy["order_purchase_timestamp"]
+        ).dt.total_seconds()
+        / 3600,
+        errors="coerce",
+    )
     df_copy["order_estimated_delivery_span_hours_from_carrier"] = pd.to_numeric(
         (
             df_copy["order_estimated_delivery_date"] - df_copy["shipping_limit_date"]
@@ -245,6 +260,13 @@ def _crete_span_cols(df: pd.DataFrame) -> pd.DataFrame:
         (
             df_copy["order_estimated_delivery_date"]
             - df_copy["order_purchase_timestamp"]
+        ).dt.total_seconds()
+        / 3600,
+        errors="coerce",
+    )
+    df_copy["order_estimated_delivery_span_hours_from_shipping_limit"] = pd.to_numeric(
+        (
+            df_copy["order_estimated_delivery_date"] - df_copy["shipping_limit_date"]
         ).dt.total_seconds()
         / 3600,
         errors="coerce",

@@ -279,6 +279,20 @@ def _crete_span_cols(df: pd.DataFrame) -> pd.DataFrame:
         / 3600,
         errors="coerce",
     )
+    df_copy["order_delivered_carrier_span_hours_from_approval"] = pd.to_numeric(
+        (
+            df_copy["order_delivered_carrier_date"] - df_copy["order_approved_at"]
+        ).dt.total_seconds()
+        / 3600,
+        errors="coerce",
+    )
+    df_copy["order_shipping_limit_span_hours_from_approval"] = pd.to_numeric(
+        (
+            df_copy["shipping_limit_date"] - df_copy["order_approved_at"]
+        ).dt.total_seconds()
+        / 3600,
+        errors="coerce",
+    )
     df_copy["order_delivered_customer_span_hours_from_purchase"] = pd.to_numeric(
         (
             df_copy["order_delivered_customer_date"]

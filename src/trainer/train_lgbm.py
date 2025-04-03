@@ -88,7 +88,7 @@ class LGBMTrainer:
             plt.savefig(output_path)
         plt.show()
 
-    def plot_feature_importance(self):
+    def plot_feature_importance(self, output_path: Optional[Path] = None):
         df_importance = pd.DataFrame(
             {
                 "feature": self.X_train.columns,
@@ -98,14 +98,17 @@ class LGBMTrainer:
         df_importance = df_importance.sort_values("importance", ascending=False)
         plt.figure(figsize=(12, 8))
         sns.barplot(
-            data=df_importance.head(20),
-            x="importance",
-            y="feature",
+            data=df_importance.head(20), x="importance", y="feature", color="blue"
         )
         # plt.title("Top 20 Feature Importance")
-        plt.xlabel("Importance")
-        plt.ylabel("Feature")
+        plt.xlabel("Importance", fontsize=16)
+        plt.ylabel("")
+        # plt.ylabel("Feature", fontsize=16)
+        plt.tick_params(axis="x", labelsize=14)
+        plt.tick_params(axis="y", labelsize=18)
         plt.tight_layout()
+        if output_path is not None:
+            plt.savefig(output_path)
         plt.show()
 
     def plot_shap_values(self, output_path: Optional[Path] = None):
@@ -118,7 +121,16 @@ class LGBMTrainer:
         )
 
         shap.initjs()
-        shap.summary_plot(shap_values, self.X_train, plot_type="bar")
+        shap.summary_plot(
+            shap_values,
+            self.X_train,
+            plot_type="bar",
+            plot_size=[12, 8],
+            show=False,
+        )
+        plt.tick_params(axis="y", labelsize=18)
+        plt.tick_params(axis="x", labelsize=14)
+        plt.tight_layout()
         if output_path is not None:
             plt.savefig(output_path)
         plt.show()

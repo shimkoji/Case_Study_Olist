@@ -7,6 +7,5 @@ wheels/
 *.egg-info
 data/
 .env
-notebook/data_analysis/old/03_geolocation.ipynb
 # Virtual environments
 .venv

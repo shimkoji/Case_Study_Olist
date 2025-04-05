@@ -34,9 +34,8 @@ class LGBMTrainer:
         for col in self.categorical_features:
             if col in self.x.columns:
                 self.x[col] = self.x[col].astype("category")
-        # データセット分割
         self.X_train, self.X_test, self.y_train, self.y_test = train_test_split(
-            self.x, self.y, test_size=0.2, random_state=42
+            self.x, self.y, test_size=0.2, random_state=self.seed
         )
         lgb_reg = LGBMRegressor(
             objective="regression",
@@ -45,7 +44,6 @@ class LGBMTrainer:
             verbose=-1,
             random_state=self.seed,
         )
-        # ランダムサーチの実行
         random_search = RandomizedSearchCV(
             estimator=lgb_reg,
             param_distributions=self.params,

@@ -25,7 +25,7 @@ def _batch_translate_with_openai(texts: list[str], batch_size: int = 20) -> list
     """
     client = OpenAI()
     translations = []
-    # バッチ処理
+
     for i in tqdm(range(0, len(texts), batch_size)):
         batch = texts[i : i + batch_size]
         input_texts = [{"id": j, "text": text} for j, text in enumerate(batch)]
@@ -55,7 +55,6 @@ def _batch_translate_with_openai(texts: list[str], batch_size: int = 20) -> list
                     content = content.rsplit("\n", 1)[0]  # 最後の行を削除
                 if content.startswith("json"):
                     content = content.split("\n", 1)[1]  # jsonの行を削除
-                # 余分な空白を削除
                 content = content.strip()
                 translated_batch = json.loads(content)
                 translated_batch = sorted(translated_batch, key=lambda x: x["id"])

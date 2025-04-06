@@ -18,15 +18,6 @@ class PartialDependence:
         pred_type: Literal["regression", "classification"],
         label_list: list[str] = None,
     ) -> None:
-        """
-        Initializes the PartialDependence object.
-
-        Args:
-            model: Trained scikit-learn model.
-            X: pandas DataFrame used for training.
-            var_names: List of feature names.
-            pred_type: Type of prediction ("regression" or "classification").
-        """
         self.model = model
         self.X = X.copy()
         self.var_names = var_names
@@ -34,17 +25,6 @@ class PartialDependence:
         self.label_list = label_list
 
     def partial_dependence(self, var_name: str, n_grid: int = 50) -> pd.DataFrame:
-        """
-        Calculates the partial dependence for given variables.
-
-        Args:
-            var_name: Variable name.
-            n_grid: Number of grid points per variable.
-
-        Returns:
-            A pandas DataFrame containing the grid points and average predictions.
-        """
-
         if not isinstance(self.X, pd.DataFrame):
             raise TypeError("X must be a pandas DataFrame.")
 
@@ -72,8 +52,6 @@ class PartialDependence:
     def _counterfactual_prediction(
         self, grid_point_series: dict[str:float]
     ) -> np.ndarray:
-        """Makes counterfactual predictions."""
-
         X_counterfactual = self.X.copy()
         for (
             var_name,
@@ -93,12 +71,6 @@ class IndividualConditionalExpectation(PartialDependence):
     def individual_conditional_expectation(
         self, var_name: str, n_grid: int = 50
     ) -> None:
-        """Calculates Individual Conditional Expectation (ICE) values.
-
-        Args:
-            var_name: The name of the feature for which to calculate ICE.
-            n_grid: The number of grid points to use for evaluating the feature's range.  A finer grid (larger value) can capture more nuanced relationships but may be more computationally expensive and potentially noisy.  A coarser grid may miss important details.  Defaults to 50.
-        """
         ids_to_compute = [i for i in range(self.X.shape[0])]
         self.target_var_name = var_name
         value_range = np.linspace(
@@ -161,11 +133,6 @@ class IndividualConditionalExpectation(PartialDependence):
         ax: Any = None,
         ylim: Union[List[float], None] = None,
     ) -> None:
-        """Visualizes ICE plots.
-
-        Args:
-            ylim: The range of the y-axis. If not specified, the range of the ICE curves will be used.
-        """
         if fig is None or ax is None:
             fig, ax = plt.subplots()
         if "category" not in self.df_ice.columns:
@@ -210,11 +177,6 @@ class IndividualConditionalExpectation(PartialDependence):
     def plot_ice_with_average(
         self, fig: Any = None, ax: Any = None, ylim: Union[List[float], None] = None
     ) -> None:
-        """Visualizes ICE (Individual Conditional Expectation) plots.
-
-        Args:
-            ylim: Tuple specifying the y-axis limits (min, max). If None, the limits are automatically determined based on the range of the ICE values.
-        """
         if fig is None or ax is None:
             fig, ax = plt.subplots()
         sns.lineplot(

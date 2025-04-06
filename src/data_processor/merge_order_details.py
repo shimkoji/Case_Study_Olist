@@ -166,7 +166,7 @@ def _create_seller_info_data(
     return seller_info_agg_by_order_id
 
 
-def _haversine(lat1, lng1, lat2, lng2):
+def _haversine(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
     """
     2点間の大圏距離を計算する（Haversine formulaを使用）
 
@@ -326,7 +326,7 @@ def _crete_span_cols(df: pd.DataFrame) -> pd.DataFrame:
     return df_copy
 
 
-def _get_most_common_category(x):
+def _get_most_common_category(x: pd.Series) -> str:
     value_counts = x.value_counts()
     return value_counts.index[0] if len(value_counts) > 0 else None
 

@@ -9,10 +9,6 @@ from .process_review_data import process_review_data
 
 
 class Processor:
-    """
-    Process the raw data and save the processed data to the processed data path.
-    """
-
     def __init__(
         self,
         raw_data_path: str,

@@ -22,7 +22,6 @@ def plot_monthly_trend(
             .reset_index(name="y")
         )
         y_label = "Number of Orders"
-        # title = "Monthly Orders"
         y_max = 8000
     elif agg_type == "sales":
         monthly_agg = (
@@ -32,7 +31,6 @@ def plot_monthly_trend(
             .reset_index(name="y")
         )
         y_label = "Total Sales (R$)"
-        # title = "Monthly Revenue"
         y_max = 1100000
     elif agg_type == "user":
         monthly_agg = (
@@ -44,7 +42,6 @@ def plot_monthly_trend(
             .reset_index(name="y")
         )
         y_label = "Number of Users"
-        # title = "Monthly Users"
         y_max = 8000
     else:
         monthly_agg = (
@@ -54,7 +51,6 @@ def plot_monthly_trend(
             .reset_index(name="y")
         )
         y_label = "Number of Sellers"
-        # title = "Monthly Sellers"
         y_max = 1700
 
     fig, ax = plt.subplots(1, 1, figsize=(12, 5))
@@ -67,7 +63,6 @@ def plot_monthly_trend(
         color="blue",
     )
     ax.grid(True, alpha=0.3)
-    # ax.set_title(title, pad=20, fontsize=14)
     ax.set_xlabel("Month", fontsize=18)
     ax.set_ylabel(y_label, fontsize=18)
     ax.tick_params(axis="x", rotation=45, labelsize=16)
@@ -100,28 +95,8 @@ def plot_category_sales_trend(
     """
     指定されたカテゴリーの月毎の販売個数推移をプロットする関数
     欠損している月は0として補完します
-
-    Parameters
-    ----------
-    categories : list
-        プロットしたい商品カテゴリーのリスト
-    df_merged : pd.DataFrame
-        注文データ・商品データを含むDataFrame
-    df_item_products : pd.DataFrame
-        商品データを含むDataFrame
-    figsize : tuple, optional
-        グラフのサイズ, by default (12, 6)
-    title : str, optional
-        グラフのタイトル, by default None
-    start_date : str, optional
-        集計開始日 ('YYYY-MM' 形式), by default None
-    end_date : str, optional
-        集計終了日 ('YYYY-MM' 形式), by default None
-    agg_type: Literal, optional
-        集計方法, by default n_sales
     """
 
-    # 日付範囲の設定
     df_merged["order_purchase_timestamp"] = pd.to_datetime(
         df_merged["order_purchase_timestamp"]
     )
@@ -134,20 +109,17 @@ def plot_category_sales_trend(
     if end_date is None:
         end_date = df_merged["order_purchase_timestamp"].max()
 
-    # 全ての月を含む日付範囲を作成
     all_months = df_merged.query(
         "order_purchase_month >= @start_date & order_purchase_month <= @end_date"
     )["order_purchase_month"].unique()
 
     all_categories = df_merged["product_category_name_english"].unique()
 
-    # 全ての月とカテゴリーの組み合わせを作成
     month_category_combinations = pd.MultiIndex.from_product(
         [all_months, all_categories],
         names=["order_purchase_month", "product_category_name_english"],
     )
 
-    # 月毎・カテゴリー別の販売個数を集計し、欠損値を0で補完
     if agg_type == "n_sales":
         monthly_category_counts = (
             df_merged.groupby(
@@ -179,10 +151,8 @@ def plot_category_sales_trend(
             .sort_values("order_purchase_month")
         )
 
-    # グラフのプロット
     fig, ax = plt.subplots(1, 1, figsize=figsize)
 
-    # 各カテゴリーごとに折れ線をプロット
     for i, category in enumerate(categories):
         category_data = monthly_category_counts.query(
             "product_category_name_english == @category"
@@ -217,14 +187,11 @@ def plot_category_sales_trend(
     if title is None:
         title = "Monthly Sales Volume by Categories"
 
-    # ax.set_title(title, pad=20, fontsize=14)
     ax.set_xlabel("Month", fontsize=14)
     ax.set_ylabel("Total Sales (R$)", fontsize=14)
     ax.grid(True, alpha=0.3)
     ax.legend(bbox_to_anchor=(1.0, 1), loc="upper left", fontsize=12)
-    # x軸のラベルを2ヶ月おきに表示
     x_labels = category_data["order_purchase_month"].astype(str)
-
     ax.set_xticks(range(len(x_labels)))
     ax.set_xticklabels(
         [label if i % 2 == 1 else "" for i, label in enumerate(x_labels)], rotation=45

@@ -61,10 +61,8 @@ class LGBMTrainer:
         logger.info(
             "Best cross-validation RMSE: {:.4f}".format(-random_search.best_score_)
         )
-        # 最適なモデルを保存
         self.best_model = random_search.best_estimator_
         self.y_pred = self.best_model.predict(self.X_test)
-        # モデルを保存
         if best_model_output_path is not None:
             with open(best_model_output_path, "wb") as f:
                 pickle.dump(self.best_model, f)
@@ -98,10 +96,8 @@ class LGBMTrainer:
         sns.barplot(
             data=df_importance.head(20), x="importance", y="feature", color="blue"
         )
-        # plt.title("Top 20 Feature Importance")
         plt.xlabel("Importance", fontsize=16)
         plt.ylabel("")
-        # plt.ylabel("Feature", fontsize=16)
         plt.tick_params(axis="x", labelsize=14)
         plt.tick_params(axis="y", labelsize=18)
         plt.tight_layout()

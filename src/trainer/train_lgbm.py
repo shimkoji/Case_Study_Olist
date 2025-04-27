@@ -21,9 +21,23 @@ logger.addHandler(handler)
 
 
 class LGBMTrainer:
+    """
+    Trains an LGBMRegressor model using RandomizedSearchCV, plots results, and generates SHAP values.
+
+    """
+
     def __init__(
         self, x: pd.DataFrame, y: pd.Series, params: dict, categorical_features: list
     ):
+        """
+        Initializes the LGBMTrainer.
+
+        Args:
+            x (pd.DataFrame): The feature DataFrame.
+            y (pd.Series): The target Series.
+            params (dict): A dictionary of hyperparameters for RandomizedSearchCV.
+            categorical_features (list): A list of column names representing categorical features.
+        """
         self.x = x
         self.y = y
         self.params = params
@@ -31,6 +45,15 @@ class LGBMTrainer:
         self.seed = 42
 
     def train(self, best_model_output_path: Optional[Path] = None):
+        """
+        Trains the LGBMRegressor model using RandomizedSearchCV.
+
+        Args:
+            best_model_output_path (Optional[Path], optional): Path to save the best model as a pickle file. Defaults to None.
+
+        Returns:
+            None: The best trained model is stored in the `self.best_model` attribute.
+        """
         for col in self.categorical_features:
             if col in self.x.columns:
                 self.x[col] = self.x[col].astype("category")
@@ -68,6 +91,15 @@ class LGBMTrainer:
                 pickle.dump(self.best_model, f)
 
     def plot_actual_vs_predicted(self, output_path: Optional[Path] = None):
+        """
+        Plots actual vs predicted values for the test set.
+
+        Args:
+            output_path (Optional[Path], optional): Path to save the plot as an image file. Defaults to None.
+
+        Returns:
+            None: Displays the plot using matplotlib.
+        """
         plt.figure(figsize=(7, 6))
         plt.scatter(self.y_test, self.y_pred, alpha=0.5)
         plt.plot(
@@ -85,6 +117,15 @@ class LGBMTrainer:
         plt.show()
 
     def plot_feature_importance(self, output_path: Optional[Path] = None):
+        """
+        Plots feature importance based on the trained model.
+
+        Args:
+            output_path (Optional[Path], optional): Path to save the plot as an image file. Defaults to None.
+
+        Returns:
+            None: Displays the plot using matplotlib.
+        """
         df_importance = pd.DataFrame(
             {
                 "feature": self.X_train.columns,
@@ -106,6 +147,15 @@ class LGBMTrainer:
         plt.show()
 
     def plot_shap_values(self, output_path: Optional[Path] = None):
+        """
+        Plots SHAP (SHapley Additive exPlanations) summary plot to visualize feature importance and impact.
+
+        Args:
+            output_path (Optional[Path], optional): Path to save the plot as an image file. Defaults to None.
+
+        Returns:
+            None: Displays the SHAP summary plot using matplotlib.
+        """
         explainer = shap.TreeExplainer(self.best_model)
         shap_values = explainer.shap_values(self.X_train)
         shap_explanation = shap.Explanation(
@@ -130,6 +180,15 @@ class LGBMTrainer:
         plt.show()
 
     def plot_ice_curves(self, output_path: Optional[Path] = None):
+        """
+        Plots Individual Conditional Expectation (ICE) curves for the 'distance_between_customer_and_seller' feature.
+
+        Args:
+            output_path (Optional[Path], optional): Path to save the plot as an image file. Defaults to None.
+
+        Returns:
+            None: Displays the ICE plot using matplotlib.
+        """
         plt.figure(figsize=(12, 6))
         feature_values = np.sort(
             self.X_train["distance_between_customer_and_seller"].unique()

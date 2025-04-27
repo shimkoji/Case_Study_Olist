@@ -1,4 +1,4 @@
-# Analytical Case Study (Olist)
+# Analytical Case Study - Olist
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 

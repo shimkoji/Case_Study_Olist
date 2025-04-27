@@ -106,7 +106,7 @@ class LGBMTrainer:
         plt.show()
 
     def plot_shap_values(self, output_path: Optional[Path] = None):
-        explainer = shap.TreeExplainer(self.best_model)  # TreeExplainerを使う
+        explainer = shap.TreeExplainer(self.best_model)
         shap_values = explainer.shap_values(self.X_train)
         shap_explanation = shap.Explanation(
             values=shap_values,
@@ -135,10 +135,7 @@ class LGBMTrainer:
             self.X_train["distance_between_customer_and_seller"].unique()
         )
         ice_values = []
-        # 各サンプルについてICE値を計算
-        for i in range(
-            min(100, len(self.X_train))
-        ):  # 計算時間を考慮して100サンプルに制限
+        for i in range(min(100, len(self.X_train))):
             sample = self.X_train.iloc[[i]].copy()
             ice_sample = []
 
@@ -150,7 +147,6 @@ class LGBMTrainer:
 
             ice_values.append(ice_sample)
 
-        # ICEプロットの描画
         ice_values = np.array(ice_values)
         mean_ice = np.mean(ice_values, axis=0)
 

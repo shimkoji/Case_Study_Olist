@@ -21,7 +21,14 @@ logger.addHandler(handler)
 
 def _batch_translate_with_openai(texts: list[str], batch_size: int = 20) -> list[str]:
     """
-    テキストのリストをバッチで翻訳する
+    Translates a list of texts in batches using OpenAI's API.
+
+    Args:
+        texts (list[str]): A list of strings to be translated.
+        batch_size (int): The number of texts to process in each batch.
+
+    Returns:
+        list[str]: A list of translated strings.
     """
     client = OpenAI()
     translations = []
@@ -48,13 +55,13 @@ def _batch_translate_with_openai(texts: list[str], batch_size: int = 20) -> list
             )
             try:
                 content = response.choices[0].message.content
-                # マークダウンの記号を削除
+                # Remove markdown symbols
                 if content.startswith("```"):
-                    content = content.split("\n", 1)[1]  # 最初の行を削除
+                    content = content.split("\n", 1)[1]  # Remove the first line
                 if content.endswith("```"):
-                    content = content.rsplit("\n", 1)[0]  # 最後の行を削除
+                    content = content.rsplit("\n", 1)[0]  # Remove the last line
                 if content.startswith("json"):
-                    content = content.split("\n", 1)[1]  # jsonの行を削除
+                    content = content.split("\n", 1)[1]  # Remove the json line
                 content = content.strip()
                 translated_batch = json.loads(content)
                 translated_batch = sorted(translated_batch, key=lambda x: x["id"])
@@ -76,7 +83,15 @@ def translate_review_data(
     df: pd.DataFrame, column_name: str, max_rows: int = 1000
 ) -> pd.DataFrame:
     """
-    データフレームの特定のカラムを翻訳する
+    Translates a specific column in a DataFrame using OpenAI's API.
+
+    Args:
+        df (pd.DataFrame): The input DataFrame.
+        column_name (str): The name of the column to translate.
+        max_rows (int): The maximum number of rows to translate.
+
+    Returns:
+        pd.DataFrame: A new DataFrame with an additional column containing the translated text.
     """
     df_copy = df.copy()
     non_null_mask = df[column_name].notna()
@@ -97,8 +112,16 @@ def categorize_positive_negative_review_data(
     df: pd.DataFrame, column_name: str
 ) -> pd.DataFrame:
     """
-    レビューデータを正負のカテゴリに分類する
-    Nullの場合はNull値を返却する
+    Categorizes review data into positive, negative, or neutral sentiment categories using a pre-trained sentiment analysis model.
+    Returns Null values for null inputs.
+
+    Args:
+        df (pd.DataFrame): The input DataFrame.
+        column_name (str): The name of the column containing the review text to categorize.
+
+    Returns:
+        pd.DataFrame: A new DataFrame with added 'label' and 'label_translated' columns
+                    representing the sentiment category and a 'label_score' column representing the confidence score.
     """
     sentiment_pipeline = pipeline(
         "sentiment-analysis", model="cardiffnlp/twitter-roberta-base-sentiment"
@@ -111,7 +134,6 @@ def categorize_positive_negative_review_data(
     score_list = []
 
     for review in tqdm(review_comment_message_en_list):
-        # Nullチェック（None または np.nan）
         if pd.isna(review):
             label_list.append(None)
             score_list.append(None)
@@ -139,6 +161,15 @@ def categorize_positive_negative_review_data(
 
 
 def modify_review_score_apply(row: pd.Series) -> float:
+    """
+    Modifies the review score based on the sentiment label.
+
+    Args:
+        row (pd.Series): A row from the DataFrame containing 'label_translated' and 'review_score' columns.
+
+    Returns:
+        float: The modified review score.
+    """
     label = row["label_translated"]
     score = row["review_score"]
     if label == "Negative":
@@ -156,7 +187,15 @@ def modify_review_score_apply(row: pd.Series) -> float:
 
 def _classify_review_sentiment(texts: str, batch_size: int = 20) -> list[str]:
     """
-    レビューテキストの内容を分析し、主要な感想ポイントを分類する
+    Analyzes the content of review texts and classifies the main feedback points.
+
+    Args:
+        texts (str): A list of review texts to be classified.
+        batch_size (int): The number of texts to process in each batch.
+
+    Returns:
+        list[str]: A list of JSON strings, where each string represents a list of categories
+                    assigned to each review text.
     """
     client = OpenAI()
     classifications = []
@@ -180,7 +219,7 @@ def _classify_review_sentiment(texts: str, batch_size: int = 20) -> list[str]:
             )
             try:
                 content = response.choices[0].message.content
-                # マークダウンの記号を削除
+                # Remove markdown symbols
                 content = content.strip()
                 if content.startswith("```"):
                     content = content.split("```")[1]
@@ -194,7 +233,7 @@ def _classify_review_sentiment(texts: str, batch_size: int = 20) -> list[str]:
                     if "id" not in item or "categories" not in item:
                         raise ValueError("Invalid response format")
                 classified_batch = sorted(classified_batch, key=lambda x: x["id"])
-                # カテゴリーリストをJSON文字列に変換
+                # Convert the category list to a JSON string
                 classifications.extend(
                     [json.dumps(item["categories"]) for item in classified_batch]
                 )
@@ -216,7 +255,17 @@ def process_review_classification(
     max_rows: int = 100,
 ):
     """
-    データフレームの英訳済みレビューを分類する
+    Classifies the English-translated reviews in the DataFrame.
+
+    Args:
+        df (pd.DataFrame): The input DataFrame.
+        column_name (str): The name of the column containing the English-translated review texts.
+                        Defaults to "review_comment_message_en".
+        max_rows (int): The maximum number of rows to classify. Defaults to 100.
+
+    Returns:
+        pd.DataFrame: A new DataFrame with an added 'review_categories' column containing
+                    the classification results as a list of categories.
     """
     df_copy = df.copy()
     non_null_mask = df_copy[column_name].notna()
@@ -226,7 +275,7 @@ def process_review_classification(
     df_copy["review_categories"] = None
     indices = df_copy.loc[non_null_mask].head(max_rows).index
     df_copy.loc[indices, "review_categories"] = classifications
-    # カテゴリーを文字列からリストに戻す（必要な場合）
+    # Convert the category back from string to list
     df_copy["review_categories"] = df_copy["review_categories"].apply(
         lambda x: json.loads(x) if isinstance(x, str) else x
     )
@@ -236,7 +285,14 @@ def process_review_classification(
 
 def process_review_date_cols(df: pd.DataFrame) -> pd.DataFrame:
     """
-    レビューデータの日付カラムを処理する
+    Processes the date columns in the review data.
+
+    Args:
+        df (pd.DataFrame): The input DataFrame containing review data with date columns.
+
+    Returns:
+        pd.DataFrame: A new DataFrame with added 'review_creation_month', 'review_answer_month',
+                    and 'review_answer_date' columns derived from the original date columns.
     """
     df_copy = df.copy()
     df_copy["review_creation_date"] = pd.to_datetime(df_copy["review_creation_date"])
@@ -256,7 +312,16 @@ def process_review_data(
     output_path: Optional[str] = None,
 ) -> pd.DataFrame:
     """
-    レビューデータを処理する
+    Processes review data by translating, categorizing sentiment, classifying content,
+    and adding date-related columns.
+
+    Args:
+        review_dataset_path (str): Path to the review dataset CSV file.
+        output_path (Optional[str]): Optional path to save the processed DataFrame as a CSV file.
+
+    Returns:
+        pd.DataFrame: A processed DataFrame containing translated review texts, sentiment labels,
+                    content classifications, and date-related features.
     """
     df_reviews = pd.read_csv(review_dataset_path)
     df_reviews_copy = df_reviews.copy()
@@ -269,7 +334,7 @@ def process_review_data(
             "review_score",
         ]
     ].drop_duplicates()
-    # レビュー内容を英訳する
+    # Translate review content to English
     logger.info("Translation task start")
     df_reviews_translated = translate_review_data(
         df=df_reviews_unique,
@@ -283,18 +348,18 @@ def process_review_data(
     )
     logger.info("Translation task end")
     logger.info("Sentiment analysis task start")
-    # レビュー内容を正負のカテゴリに分類する
+    # Categorize review content into positive/negative sentiment
     df_reviews_translated_labelled = categorize_positive_negative_review_data(
         df=df_reviews_translated,
         column_name="review_comment_message_en",
     )
-    # レビュースコアを逆に記入したものを修正
+    # Fix reversed review scores
     df_reviews_translated_labelled["modified_review_score"] = (
         df_reviews_translated_labelled.apply(modify_review_score_apply, axis=1)
     )
     logger.info("Sentiment analysis task end")
     logger.info("Classification task start")
-    # レビュー内容を分類する
+    # Classify review content
     df_reviews_translated_labelled_classified = process_review_classification(
         df=df_reviews_translated_labelled,
         max_rows=df_reviews_translated_labelled.shape[0],

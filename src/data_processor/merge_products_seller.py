@@ -11,7 +11,18 @@ def process_products_seller_data(
     output_path: Optional[str] = None,
 ) -> pd.DataFrame:
     """
-    Process the product, category name, order item, and seller data to create a dataset with product information, seller information, and order item information.
+    Processes product, category name, order item, and seller data to create a merged dataset.
+
+    Args:
+        product_dataset_path (str): Path to the product dataset CSV file.
+        category_name_dataset_path (str): Path to the category name dataset CSV file.
+        order_item_dataset_path (str): Path to the order item dataset CSV file.
+        seller_dataset_path (str): Path to the seller dataset CSV file.
+        output_path (Optional[str]): Optional path to save the processed DataFrame as a CSV file.
+
+    Returns:
+        pd.DataFrame: A merged DataFrame containing product information, seller information,
+                    and order item information.
     """
     df_products = pd.read_csv(product_dataset_path)
     df_category_name = pd.read_csv(category_name_dataset_path)

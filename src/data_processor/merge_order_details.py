@@ -7,6 +7,16 @@ import pandas as pd
 def _create_payment_agg_data(
     payments_dataset_path: str,
 ) -> pd.DataFrame:
+    """
+    Aggregates payment data by order ID.
+
+    Args:
+        payments_dataset_path (str): Path to the payments dataset CSV file.
+
+    Returns:
+        pd.DataFrame: Aggregated payment data with columns like total payment value,
+                    payment type count, and most common payment type.
+    """
     df_payments = pd.read_csv(payments_dataset_path)
     agg_payments = (
         df_payments.groupby("order_id")
@@ -55,6 +65,14 @@ def _create_payment_agg_data(
 def _create_geolocation_agg_data(
     geolocation_dataset_path: str,
 ) -> pd.DataFrame:
+    """
+    Aggregates geolocation data by state and zip code prefix.
+
+    Args:
+        geolocation_dataset_path (str): Path to the geolocation dataset CSV file.
+    Returns:
+        pd.DataFrame: Aggregated geolocation data with mean latitude and longitude for each state and zip code prefix.
+    """
     df_geolocation = pd.read_csv(geolocation_dataset_path)
     df_geolocation_agg = (
         df_geolocation.groupby(["geolocation_state", "geolocation_zip_code_prefix"])
@@ -74,6 +92,17 @@ def _merge_order_payment_geolocation_data(
     geolocation_dataset_path: str,
     payments_dataset_path: str,
 ) -> pd.DataFrame:
+    """
+    Merges order items, payment, and geolocation data.
+
+    Args:
+        order_items_dataset_path (str): Path to the order items dataset CSV file.
+        geolocation_dataset_path (str): Path to the geolocation dataset CSV file.
+        payments_dataset_path (str): Path to the payments dataset CSV file.
+
+    Returns:
+        pd.DataFrame: Merged DataFrame containing order items, payment, and customer geolocation data.
+    """
     df_agg_payments = _create_payment_agg_data(payments_dataset_path)
     df_geolocation_agg = _create_geolocation_agg_data(geolocation_dataset_path)
 
@@ -104,6 +133,17 @@ def _create_seller_info_data(
     item_product_seller_merged_path: str,
     geolocation_dataset_path: str,
 ) -> pd.DataFrame:
+    """
+    Creates aggregated seller information by order ID.
+
+    Args:
+        item_product_seller_merged_path (str): Path to the merged item, product, and seller dataset CSV file.
+        geolocation_dataset_path (str): Path to the geolocation dataset CSV file.
+
+    Returns:
+        pd.DataFrame: Aggregated seller information including mean latitude, longitude, price,
+                    number of unique products, and other relevant seller-related features.
+    """
     df_item_product_seller_merged = pd.read_csv(item_product_seller_merged_path)
     df_geolocation_agg = _create_geolocation_agg_data(geolocation_dataset_path)
     df_item_products_seller_geolocation_merged = pd.merge(
@@ -168,19 +208,18 @@ def _create_seller_info_data(
 
 def _haversine(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
     """
-    2点間の大圏距離を計算する（Haversine formulaを使用）
+    Calculates the great-circle distance between two points on Earth using the Haversine formula.
 
     Args:
-        lat1: 1点目の緯度 (度)
-        lng1: 1点目の経度 (度)
-        lat2: 2点目の緯度 (度)
-        lng2: 2点目の経度 (度)
+        lat1 (float): Latitude of the first point in degrees.
+        lng1 (float): Longitude of the first point in degrees.
+        lat2 (float): Latitude of the second point in degrees.
+        lng2 (float): Longitude of the second point in degrees.
 
     Returns:
-        2点間の距離 (km)
+        float: The distance between the two points in kilometers.
     """
-    R = 6371  # 地球の半径 (km)
-
+    R = 6371
     lat1_rad = math.radians(lat1)
     lng1_rad = math.radians(lng1)
     lat2_rad = math.radians(lat2)
@@ -200,6 +239,16 @@ def _haversine(lat1: float, lng1: float, lat2: float, lng2: float) -> float:
 
 
 def _create_distance_info_between_customer_and_seller(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Calculates the distance between customer and seller locations and creates distance bins.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing customer and seller latitude and longitude data.
+
+    Returns:
+        pd.DataFrame: DataFrame with added 'distance_between_customer_and_seller' column
+                    and one-hot encoded distance bin columns.
+    """
     df["distance_between_customer_and_seller"] = df.apply(
         lambda row: _haversine(
             row["customer_lat"],
@@ -217,14 +266,22 @@ def _create_distance_info_between_customer_and_seller(df: pd.DataFrame) -> pd.Da
     distance_bin_dummies = pd.get_dummies(
         df["distance_bin"], prefix="distance_bin"
     ).astype(int)
-
-    # 元のデータフレームに結合
     df_merged = pd.concat([df, distance_bin_dummies], axis=1)
     assert df_merged.shape[0] == df.shape[0]
     return df_merged
 
 
 def _crete_span_cols(df: pd.DataFrame) -> pd.DataFrame:
+    """
+    Creates time span columns based on order timestamps.
+
+    Args:
+        df (pd.DataFrame): DataFrame containing order timestamps.
+
+    Returns:
+        pd.DataFrame: DataFrame with added columns representing the time span in hours
+                    between various order events.
+    """
     df_copy = df.copy()
     for col in [
         "order_purchase_timestamp",
@@ -327,6 +384,15 @@ def _crete_span_cols(df: pd.DataFrame) -> pd.DataFrame:
 
 
 def _get_most_common_category(x: pd.Series) -> str:
+    """
+    Gets the most common category from a Pandas Series.
+
+    Args:
+        x (pd.Series): A Pandas Series containing categories.
+
+    Returns:
+        str: The most frequent category in the Series. Returns None if the Series is empty.
+    """
     value_counts = x.value_counts()
     return value_counts.index[0] if len(value_counts) > 0 else None
 
@@ -334,9 +400,18 @@ def _get_most_common_category(x: pd.Series) -> str:
 def _merge_most_common_category_by_order_id(
     df: pd.DataFrame, item_product_seller_merged_path: str
 ) -> pd.DataFrame:
+    """
+    Merges the most common product category, seller city, and seller state with the main DataFrame.
+
+    Args:
+        df (pd.DataFrame): The main DataFrame to merge into.
+        item_product_seller_merged_path (str): Path to the item_product_seller_merged dataset CSV file.
+
+    Returns:
+        pd.DataFrame: The merged DataFrame containing the most common product category, seller city, and seller state for each order ID.
+    """
     df_copy = df.copy()
     df_item_product_seller_merged = pd.read_csv(item_product_seller_merged_path)
-    # 最も多いカテゴリを取得
     agg_most_common_category_by_order_id = (
         df_item_product_seller_merged.groupby("order_id")[
             ["product_category_name_english", "seller_city", "seller_state"]
@@ -363,18 +438,32 @@ def process_order_details_data(
     item_product_seller_merged_path: str,
     output_path: Optional[str] = None,
 ) -> pd.DataFrame:
-    # 1. 注文IDごとに支払い情報とジオロケーション情報を結合
+    """
+    Processes and merges order details data from multiple datasets.
+
+    Args:
+        order_items_dataset_path (str): Path to the order items dataset CSV file.
+        geolocation_dataset_path (str): Path to the geolocation dataset CSV file.
+        payments_dataset_path (str): Path to the payments dataset CSV file.
+        item_product_seller_merged_path (str): Path to the merged item, product, and seller dataset CSV file.
+        output_path (Optional[str]): Optional path to save the processed DataFrame as a CSV file.
+
+    Returns:
+        pd.DataFrame: A merged DataFrame containing order details, payment information,
+                    geolocation data, seller information, distance data, and time span data.
+    """
+    # 1. Merge payment information and geolocation information by order ID
     df_order_payment_geolocation_merged = _merge_order_payment_geolocation_data(
         order_items_dataset_path=order_items_dataset_path,
         geolocation_dataset_path=geolocation_dataset_path,
         payments_dataset_path=payments_dataset_path,
     )
-    # 2. 注文IDごとにセラー情報を結合
+    # 2. Merge seller information by order ID
     seller_info_agg_by_order_id = _create_seller_info_data(
         item_product_seller_merged_path=item_product_seller_merged_path,
         geolocation_dataset_path=geolocation_dataset_path,
     )
-    # 3. 注文IDごとに販売店情報を結合
+    # 3. Merge seller information by store ID
     df_order_payment_geolocation_seller_merged = pd.merge(
         df_order_payment_geolocation_merged,
         seller_info_agg_by_order_id,
@@ -385,18 +474,18 @@ def process_order_details_data(
         df_order_payment_geolocation_seller_merged.shape[0]
         == df_order_payment_geolocation_merged.shape[0]
     )
-    # 4. 注文IDごとに最も多いカテゴリを結合
+    # 4. Merge the most frequent category by order ID
     df_order_payment_geolocation_seller_merged = (
         _merge_most_common_category_by_order_id(
             df=df_order_payment_geolocation_seller_merged,
             item_product_seller_merged_path=item_product_seller_merged_path,
         )
     )
-    # 5. 注文IDごとに期間の情報を結合
+    # 5. Merge period/time span information by order ID
     df_order_payment_geolocation_seller_merged = _crete_span_cols(
         df=df_order_payment_geolocation_seller_merged
     )
-    # 6. 注文IDごとに顧客と販売店の距離情報を結合
+    # 6. Merge distance information between customer and seller by order ID
     df_order_payment_geolocation_seller_merged = (
         _create_distance_info_between_customer_and_seller(
             df=df_order_payment_geolocation_seller_merged

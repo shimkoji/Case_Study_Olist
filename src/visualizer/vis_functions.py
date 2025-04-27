@@ -11,7 +11,20 @@ def plot_monthly_trend(
     output_path: Optional[Path] = None,
 ) -> None:
     """
-    月毎のトレンドをプロットする関数
+    Plots the monthly trend for various aggregation types (number of sales, total sales, number of users, number of sellers).
+
+    Args:
+        df (pd.DataFrame): The input DataFrame containing order data with 'order_purchase_timestamp' column.
+        agg_type (Literal["n_sales", "sales", "user", "seller"], optional): The type of aggregation to plot.
+            - "n_sales": Number of orders.
+            - "sales": Total sales amount.
+            - "user": Number of unique users.
+            - "seller": Number of unique sellers.
+            Defaults to "n_sales".
+        output_path (Optional[Path], optional): Path to save the plot as an image file. Defaults to None.
+
+    Returns:
+        None: Displays the plot using matplotlib.
     """
     date_range = pd.period_range(start="2016-09", end="2018-10", freq="M")
     if agg_type == "n_sales":
@@ -68,7 +81,6 @@ def plot_monthly_trend(
     ax.tick_params(axis="x", rotation=45, labelsize=16)
     ax.tick_params(axis="y", labelsize=16)
 
-    # x軸のラベルを2ヶ月おきに表示
     x_labels = monthly_agg["index"].astype(str)
     ax.set_xticks(range(len(x_labels)))
     ax.set_xticklabels(
@@ -93,8 +105,26 @@ def plot_category_sales_trend(
     output_path: Optional[Path] = None,
 ) -> None:
     """
-    指定されたカテゴリーの月毎の販売個数推移をプロットする関数
-    欠損している月は0として補完します
+    Plots the monthly sales trend for specified product categories.
+
+    Args:
+        categories (list): A list of product category names to plot.
+        df_merged (pd.DataFrame): The input DataFrame containing order and product information.
+            Must have 'order_purchase_timestamp', 'order_purchase_month',
+            'product_category_name_english', 'order_id' (for 'n_sales'), and 'price' (for 'sales') columns.
+        figsize (tuple, optional): The figure size for the plot. Defaults to (12, 6).
+        title (str, optional): The title of the plot. Defaults to None.
+        start_date (str, optional): The start date for the plot (YYYY-MM-DD). If None, the earliest date in the data is used. Defaults to None.
+        end_date (str, optional): The end date for the plot (YYYY-MM-DD). If None, the latest date in the data is used. Defaults to None.
+        agg_type (Literal["n_sales", "sales", "user"], optional): The type of aggregation to plot.
+            - "n_sales": Number of orders.
+            - "sales": Total sales amount.
+            - "user": Number of unique users.
+            Defaults to "n_sales".
+        output_path (Optional[Path], optional): Path to save the plot as an image file. Defaults to None.
+
+    Returns:
+        None: Displays the plot using matplotlib.  Fills missing months with 0 to ensure continuous trend lines.
     """
 
     df_merged["order_purchase_timestamp"] = pd.to_datetime(

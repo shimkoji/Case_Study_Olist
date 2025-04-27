@@ -18,6 +18,16 @@ class PartialDependence:
         pred_type: Literal["regression", "classification"],
         label_list: list[str] = None,
     ) -> None:
+        """
+        Initializes the PartialDependence object.
+
+        Args:
+            model (Any): The trained machine learning model.  Must have a `predict` or `predict_proba` method.
+            X (pd.DataFrame): The DataFrame used for training the model.  Used for creating counterfactual samples.
+            var_names (list[str]): A list of feature names to be used in the partial dependence calculation.
+            pred_type (Literal["regression", "classification"]): The type of prediction task ("regression" or "classification").
+            label_list (list[str], optional): A list of class labels for classification tasks. Required if `pred_type` is "classification". Defaults to None.
+        """
         self.model = model
         self.X = X.copy()
         self.var_names = var_names
@@ -25,6 +35,18 @@ class PartialDependence:
         self.label_list = label_list
 
     def partial_dependence(self, var_name: str, n_grid: int = 50) -> pd.DataFrame:
+        """
+        Calculates the partial dependence for a single feature.
+
+        Args:
+            var_name (str): The name of the feature for which to calculate the partial dependence.
+            n_grid (int, optional): The number of grid points to use for varying the feature. Defaults to 50.
+
+        Returns:
+            pd.DataFrame: A DataFrame containing the grid points and the corresponding average predicted outcomes.
+                        For regression, it has columns `var_name` and `avg_pred`.
+                        For classification, it has columns `var_name` and columns for each class label in `label_list`.
+        """
         if not isinstance(self.X, pd.DataFrame):
             raise TypeError("X must be a pandas DataFrame.")
 
@@ -52,6 +74,15 @@ class PartialDependence:
     def _counterfactual_prediction(
         self, grid_point_series: dict[str:float]
     ) -> np.ndarray:
+        """
+        Generates counterfactual samples and makes predictions.
+
+        Args:
+            grid_point_series (dict[str:float]): A dictionary containing the values of the feature(s) to vary.
+
+        Returns:
+            np.ndarray: An array of predicted outcomes for the counterfactual samples.
+        """
         X_counterfactual = self.X.copy()
         for (
             var_name,
@@ -71,6 +102,16 @@ class IndividualConditionalExpectation(PartialDependence):
     def individual_conditional_expectation(
         self, var_name: str, n_grid: int = 50
     ) -> None:
+        """
+        Calculates the individual conditional expectation (ICE) for a single feature.
+
+        Args:
+            var_name (str): The name of the feature for which to calculate the ICE.
+            n_grid (int, optional): The number of grid points to use for varying the feature. Defaults to 50.
+
+        Returns:
+            None: The results are stored in the `self.df_ice` attribute.
+        """
         ids_to_compute = [i for i in range(self.X.shape[0])]
         self.target_var_name = var_name
         value_range = np.linspace(
@@ -133,6 +174,18 @@ class IndividualConditionalExpectation(PartialDependence):
         ax: Any = None,
         ylim: Union[List[float], None] = None,
     ) -> None:
+        """
+        Plots the individual conditional expectation (ICE) curves.
+
+        Args:
+            fig (Any, optional): The matplotlib figure object to plot on.  If None, a new figure is created. Defaults to None.
+            ax (Any, optional): The matplotlib axes object to plot on.  If None, a new axes is created. Defaults to None.
+            ylim (Union[List[float], None], optional): The y-axis limits for the plot. Defaults to None.
+
+        Returns:
+            None: The plot is displayed.
+        """
+
         if fig is None or ax is None:
             fig, ax = plt.subplots()
         if "category" not in self.df_ice.columns:
@@ -177,6 +230,17 @@ class IndividualConditionalExpectation(PartialDependence):
     def plot_ice_with_average(
         self, fig: Any = None, ax: Any = None, ylim: Union[List[float], None] = None
     ) -> None:
+        """
+        Plots the individual conditional expectation (ICE) curves with an overlayed average ICE curve.
+
+        Args:
+            fig (Any, optional): The matplotlib figure object to plot on.  If None, a new figure is created. Defaults to None.
+            ax (Any, optional): The matplotlib axes object to plot on.  If None, a new axes is created. Defaults to None.
+            ylim (Union[List[float], None], optional): The y-axis limits for the plot. Defaults to None.
+
+        Returns:
+            None: The plot is displayed.  ICE curves are centered by subtracting the minimum ice value for each instance.
+        """
         if fig is None or ax is None:
             fig, ax = plt.subplots()
         sns.lineplot(

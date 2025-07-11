@@ -49,7 +49,7 @@ This project provides a comprehensive analysis of Olist's business challenges, o
 ## Presentation Slides
 
 *   [English Slides](https://drive.google.com/file/d/1dCPDZULL8augCY4Un5OoeSJYfKdU8kp1/view?usp=sharing)
-*   [Japanese Slides](https://drive.google.com/file/d/1wuR52Ovcg05iJT5yFeyNzWCrwdA-1Hvp/view?usp=sharing)
+*   [Japanese Slides]([https://drive.google.com/file/d/1wuR52Ovcg05iJT5yFeyNzWCrwdA-1Hvp/view?usp=sharing](https://drive.google.com/file/d/1gyEBFXcvawT9OTvJsDigvndumABqwMFH/view?usp=sharing))
 
 ## License
 
